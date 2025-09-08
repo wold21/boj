@@ -11,12 +11,13 @@ public class Main {
 
         int cookingTime = Integer.parseInt(br.readLine());
 
-        int upHour = time[1] + cookingTime % 60;
-        int resultsHour = time[0] + cookingTime;
-        if (resultsHour) {
+        int totalMinutes = time[0] * 60 + time[1];
+        totalMinutes += cookingTime;
 
-        }
-        // System.out.println(time[0] + " " + time[1]);
+        int resultHour = totalMinutes / 60 % 24;
+        int resultMinute = totalMinutes % 60;
+
+        System.out.println(resultHour + " " + resultMinute);
 
 
         br.close();
